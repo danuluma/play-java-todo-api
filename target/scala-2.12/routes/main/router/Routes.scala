@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:F:/play_java/java-todo-api/conf/routes
-// @DATE:Fri Mar 23 14:19:57 EAT 2018
+// @DATE:Fri Mar 23 18:51:59 EAT 2018
 
 package router
 
@@ -14,22 +14,22 @@ import _root_.play.libs.F
 
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
-  // @LINE:6
+  // @LINE:5
   HomeController_0: controllers.HomeController,
-  // @LINE:9
+  // @LINE:8
   Application_2: controllers.Application,
-  // @LINE:15
+  // @LINE:16
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
-    // @LINE:6
+    // @LINE:5
     HomeController_0: controllers.HomeController,
-    // @LINE:9
+    // @LINE:8
     Application_2: controllers.Application,
-    // @LINE:15
+    // @LINE:16
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_0, Application_2, Assets_1, "/")
 
@@ -48,6 +48,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """hello""", """controllers.Application.sayHelloTo(name:String = "Play Developer")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """hello/""" + "$" + """name<[^/]+>""", """controllers.Application.sayHelloTo(name:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tasks""", """controllers.HomeController.fetchAllTasks"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update_task""", """controllers.HomeController.updateTask"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete_task/""" + "$" + """id<[^/]+>""", """controllers.HomeController.deleteTask(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -56,7 +58,7 @@ class Routes(
   }}
 
 
-  // @LINE:6
+  // @LINE:5
   private[this] lazy val controllers_HomeController_index0_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
@@ -69,12 +71,15 @@ class Routes(
       Nil,
       "GET",
       this.prefix + """""",
-      """ An example controller showing a sample home page""",
+      """ Routes
+ This file defines all application routes (Higher priority routes first)
+ ~~~~
+ An example controller showing a sample home page""",
       Seq()
     )
   )
 
-  // @LINE:7
+  // @LINE:6
   private[this] lazy val controllers_HomeController_createTask1_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("add_task")))
   )
@@ -92,7 +97,7 @@ class Routes(
     )
   )
 
-  // @LINE:9
+  // @LINE:8
   private[this] lazy val controllers_Application_sayHelloTo2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hello")))
   )
@@ -110,7 +115,7 @@ class Routes(
     )
   )
 
-  // @LINE:10
+  // @LINE:9
   private[this] lazy val controllers_Application_sayHelloTo3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hello/"), DynamicPart("name", """[^/]+""",true)))
   )
@@ -128,7 +133,7 @@ class Routes(
     )
   )
 
-  // @LINE:11
+  // @LINE:10
   private[this] lazy val controllers_HomeController_fetchAllTasks4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tasks")))
   )
@@ -146,11 +151,47 @@ class Routes(
     )
   )
 
-  // @LINE:15
-  private[this] lazy val controllers_Assets_versioned5_route = Route("GET",
+  // @LINE:11
+  private[this] lazy val controllers_HomeController_updateTask5_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update_task")))
+  )
+  private[this] lazy val controllers_HomeController_updateTask5_invoker = createInvoker(
+    HomeController_0.updateTask,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "updateTask",
+      Nil,
+      "POST",
+      this.prefix + """update_task""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:12
+  private[this] lazy val controllers_HomeController_deleteTask6_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delete_task/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_HomeController_deleteTask6_invoker = createInvoker(
+    HomeController_0.deleteTask(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "deleteTask",
+      Seq(classOf[Long]),
+      "GET",
+      this.prefix + """delete_task/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_Assets_versioned7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned5_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned7_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -167,40 +208,52 @@ class Routes(
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
-    // @LINE:6
+    // @LINE:5
     case controllers_HomeController_index0_route(params@_) =>
       call { 
         controllers_HomeController_index0_invoker.call(HomeController_0.index)
       }
   
-    // @LINE:7
+    // @LINE:6
     case controllers_HomeController_createTask1_route(params@_) =>
       call { 
         controllers_HomeController_createTask1_invoker.call(HomeController_0.createTask)
       }
   
-    // @LINE:9
+    // @LINE:8
     case controllers_Application_sayHelloTo2_route(params@_) =>
       call(Param[String]("name", Right("Play Developer"))) { (name) =>
         controllers_Application_sayHelloTo2_invoker.call(Application_2.sayHelloTo(name))
       }
   
-    // @LINE:10
+    // @LINE:9
     case controllers_Application_sayHelloTo3_route(params@_) =>
       call(params.fromPath[String]("name", None)) { (name) =>
         controllers_Application_sayHelloTo3_invoker.call(Application_2.sayHelloTo(name))
       }
   
-    // @LINE:11
+    // @LINE:10
     case controllers_HomeController_fetchAllTasks4_route(params@_) =>
       call { 
         controllers_HomeController_fetchAllTasks4_invoker.call(HomeController_0.fetchAllTasks)
       }
   
-    // @LINE:15
-    case controllers_Assets_versioned5_route(params@_) =>
+    // @LINE:11
+    case controllers_HomeController_updateTask5_route(params@_) =>
+      call { 
+        controllers_HomeController_updateTask5_invoker.call(HomeController_0.updateTask)
+      }
+  
+    // @LINE:12
+    case controllers_HomeController_deleteTask6_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_HomeController_deleteTask6_invoker.call(HomeController_0.deleteTask(id))
+      }
+  
+    // @LINE:16
+    case controllers_Assets_versioned7_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned5_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned7_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

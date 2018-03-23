@@ -133,7 +133,7 @@ public class HomeController extends Controller {
         task.delete();
         result.put("code", "200");
         result.put("message", "Task of id "+id+" removed successfully!");
-        return ok();
+        return ok(Json.toJson(result));
     }
 
     //Can BOB confirm that he is using ECB nad not CCB
