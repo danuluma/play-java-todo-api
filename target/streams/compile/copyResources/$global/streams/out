@@ -1,0 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(F:\play_java\java-todo-api\conf\application.conf,F:\play_java\java-todo-api\target\scala-2.12\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(F:\play_java\java-todo-api\conf\evolutions,F:\play_java\java-todo-api\target\scala-2.12\classes\evolutions)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(F:\play_java\java-todo-api\conf\logback.xml,F:\play_java\java-todo-api\target\scala-2.12\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(F:\play_java\java-todo-api\conf\routes,F:\play_java\java-todo-api\target\scala-2.12\classes\routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(F:\play_java\java-todo-api\conf\evolutions\default,F:\play_java\java-todo-api\target\scala-2.12\classes\evolutions\default)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(F:\play_java\java-todo-api\conf\evolutions\default\1.sql,F:\play_java\java-todo-api\target\scala-2.12\classes\evolutions\default\1.sql)[0m

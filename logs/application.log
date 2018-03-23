@@ -1,0 +1,10 @@
+2018-03-23 10:07:22,986 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-7 - application.conf @ file:/F:/play_java/java-todo-api/target/scala-2.12/classes/application.conf: 7: user is deprecated, use username instead
+2018-03-23 10:07:23,001 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2018-03-23 10:07:23,284 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:mysql://localhost/playdb
+2018-03-23 10:07:24,351 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-03-23 10:07:24,396 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev)
