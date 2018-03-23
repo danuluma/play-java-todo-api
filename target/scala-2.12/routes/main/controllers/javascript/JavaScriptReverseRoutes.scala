@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:F:/play_java/java-todo-api/conf/routes
-// @DATE:Fri Mar 23 12:46:01 EAT 2018
+// @DATE:Fri Mar 23 14:19:57 EAT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -29,6 +29,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:11
+    def fetchAllTasks: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.fetchAllTasks",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tasks"})
+        }
+      """
+    )
+  
     // @LINE:7
     def createTask: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.createTask",
@@ -41,7 +51,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:14
+  // @LINE:15
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -49,7 +59,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
+    // @LINE:15
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

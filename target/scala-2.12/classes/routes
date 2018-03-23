@@ -8,6 +8,7 @@ POST    /add_task                     controllers.HomeController.createTask
 
 GET     /hello                      controllers.Application.sayHelloTo(name: String="Play Developer")
 GET     /hello/:name                      controllers.Application.sayHelloTo(name: String)
+GET     /tasks                      controllers.HomeController.fetchAllTasks
 
 
 # Map static resources from the /public folder to the /assets URL path
