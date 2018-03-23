@@ -1,5 +1,8 @@
-[0m[[0m[31merror[0m] [0m[0mF:\play_java\java-todo-api\conf\routes:9:1: value sayHelloTo is not a member of controllers.Application[0m
-[0m[[0m[31merror[0m] [0m[0mGET     /hello                      controllers.Application.sayHelloTo(name: String="Play Developer")[0m
-[0m[[0m[31merror[0m] [0m[0mF:\play_java\java-todo-api\conf\routes:10:1: value sayHelloTo is not a member of controllers.Application[0m
-[0m[[0m[31merror[0m] [0m[0mGET     /hello/:name                      controllers.Application.sayHelloTo(name: String)[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mF:\play_java\java-todo-api\app\controllers\HomeController.java:40:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method getTextValue()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class com.fasterxml.jackson.databind.JsonNode[0m
+[0m[[0m[31merror[0m] [0m[0m            String name = json.findPath("name").getTextValue();[0m
+[0m[[0m[31merror[0m] [0m[0mF:\play_java\java-todo-api\app\controllers\HomeController.java:41:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method getTextValue()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class com.fasterxml.jackson.databind.JsonNode[0m
+[0m[[0m[31merror[0m] [0m[0m            String description = json.findPath("description").getTextValue();[0m

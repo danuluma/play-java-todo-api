@@ -6,6 +6,7 @@
 create table task (
   id                            bigint auto_increment not null,
   name                          varchar(255),
+  description                   varchar(255),
   done                          tinyint(1) default 0 not null,
   due_date                      datetime(6),
   constraint pk_task primary key (id)

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:F:/play_java/java-todo-api/conf/routes
-// @DATE:Fri Mar 23 10:06:27 EAT 2018
+// @DATE:Fri Mar 23 12:46:01 EAT 2018
 
 import play.api.mvc.Call
 
@@ -25,9 +25,9 @@ package controllers {
     }
   
     // @LINE:7
-    def createUser(): Call = {
+    def createTask(): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "create")
+      Call("POST", _prefix + { _defaultPrefix } + "add_task")
     }
   
   }

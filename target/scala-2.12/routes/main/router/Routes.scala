@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:F:/play_java/java-todo-api/conf/routes
-// @DATE:Fri Mar 23 10:06:27 EAT 2018
+// @DATE:Fri Mar 23 12:46:01 EAT 2018
 
 package router
 
@@ -44,7 +44,7 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create""", """controllers.HomeController.createUser"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """add_task""", """controllers.HomeController.createTask"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """hello""", """controllers.Application.sayHelloTo(name:String = "Play Developer")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """hello/""" + "$" + """name<[^/]+>""", """controllers.Application.sayHelloTo(name:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
@@ -74,18 +74,18 @@ class Routes(
   )
 
   // @LINE:7
-  private[this] lazy val controllers_HomeController_createUser1_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("create")))
+  private[this] lazy val controllers_HomeController_createTask1_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("add_task")))
   )
-  private[this] lazy val controllers_HomeController_createUser1_invoker = createInvoker(
-    HomeController_0.createUser,
+  private[this] lazy val controllers_HomeController_createTask1_invoker = createInvoker(
+    HomeController_0.createTask,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "createUser",
+      "createTask",
       Nil,
       "POST",
-      this.prefix + """create""",
+      this.prefix + """add_task""",
       """""",
       Seq()
     )
@@ -155,9 +155,9 @@ class Routes(
       }
   
     // @LINE:7
-    case controllers_HomeController_createUser1_route(params@_) =>
+    case controllers_HomeController_createTask1_route(params@_) =>
       call { 
-        controllers_HomeController_createUser1_invoker.call(HomeController_0.createUser)
+        controllers_HomeController_createTask1_invoker.call(HomeController_0.createTask)
       }
   
     // @LINE:9

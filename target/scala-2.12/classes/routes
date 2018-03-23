@@ -4,7 +4,7 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
-POST    /create                     controllers.HomeController.createUser
+POST    /add_task                     controllers.HomeController.createTask
 
 GET     /hello                      controllers.Application.sayHelloTo(name: String="Play Developer")
 GET     /hello/:name                      controllers.Application.sayHelloTo(name: String)
